@@ -1,0 +1,36 @@
+[project]
+name = "private_calls"
+version = "0.1.0"
+description = "pre-commit hook that checks whether a private function is being called outside of its module."
+readme = "README.md"
+requires-python = ">=3.8"
+license = {file = "LICENSE"}
+keywords = ["pre-commit", "devx"]
+authors = [
+  {name = "Eric Mendes", email = "ericvelasco.2000@gmail.com" }
+]
+maintainers = [
+  {name = "Eric Mendes", email = "ericvelasco.2000@gmail.com" }
+]
+classifiers = [  
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.8",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3 :: Only",
+]
+dependencies = []
+
+[project.optional-dependencies] 
+dev = ["ruff"]
+
+[project.urls]  
+"Homepage" = "https://github.com/Eric-Mendes/private-calls-pre-commit"
+"Bug Reports" = "https://github.com/Eric-Mendes/private-calls-pre-commit/issues"
+"Source" = "https://github.com/Eric-Mendes/private-calls-pre-commit"
+
+[build-system]
+requires = ["setuptools>=43.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
