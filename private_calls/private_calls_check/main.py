@@ -9,6 +9,15 @@ from find_call import FindCall
 from find_function_def import FindFunctionDef
 
 
+def _create_error_msg(errors: list[str]) -> str:
+    err_msg = []
+    for i, modname, function_call, lineno in enumerate(errors):
+        err_msg.append(
+            f"{i}. {modname} is calling {function_call} at line {lineno}, a private function that doesn't belong to it."
+        )
+    return "\n".join(err_msg)
+
+
 def private_calls_check(folders: list[str]):
     errors = []
     for folder in folders:
@@ -45,13 +54,7 @@ def private_calls_check(folders: list[str]):
                                     (modname, call, function_calls.linenos[i])
                                 )
     if len(errors) > 0:
-        err_msg = []
-        for i, modname, function_call, lineno in enumerate(errors):
-            err_msg.append(
-                f"{i}. {modname} is calling {function_call} at line {lineno}, a private function that doesn't belong to it."
-            )
-
-        raise Exception("\n".join(err_msg))
+        raise Exception(_create_error_msg(errors))
 
 
 def main():
