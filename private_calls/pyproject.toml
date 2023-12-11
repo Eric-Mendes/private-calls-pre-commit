@@ -1,6 +1,6 @@
 [project]
 name = "private-calls-check"
-version = "0.1.0"
+version = "0.1.2"
 description = "pre-commit hook that checks whether a private function is being called outside of its module."
 readme = "README.md"
 requires-python = ">=3.8"
@@ -27,7 +27,7 @@ dependencies = []
 dev = ["ruff", "pytest"]
 
 [project.scripts]
-private-calls-check = "private_calls_check.main:main"
+private-calls-check = "private_calls.private_calls_check.main:main"
 
 [project.urls]  
 "Homepage" = "https://github.com/Eric-Mendes/private-calls-pre-commit"
