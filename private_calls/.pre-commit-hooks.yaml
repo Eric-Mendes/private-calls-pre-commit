@@ -1,5 +1,0 @@
-- id: private-calls-check
-  name: private-calls-check
-  description: pre-commit hook that checks whether a private function is being called outside of its module.
-  entry: private-calls-check
-  language: python
