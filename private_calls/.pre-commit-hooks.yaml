@@ -3,3 +3,4 @@
   description: Checks whether a private function is being called outside of where it should be.
   entry: private-calls-check
   language: python
+  types: [python]

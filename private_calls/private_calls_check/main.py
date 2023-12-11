@@ -52,14 +52,12 @@ def main(*filenames):
     total_violations = []
     for filename in args.filenames:
         file = Path(filename)
-        print(file)
-        if file.match("*.py"):
-            file_violations = private_calls_check(file)
-            if len(file_violations) > 0:
-                file_violations_msgs = _create_violations_msg(
-                    mod_name=str(file), violations=file_violations
-                )
-                total_violations += file_violations_msgs
+        file_violations = private_calls_check(file)
+        if len(file_violations) > 0:
+            file_violations_msgs = _create_violations_msg(
+                mod_name=str(file), violations=file_violations
+            )
+            total_violations += file_violations_msgs
 
     print(f"{len(total_violations)} violation(s) found.")
     if len(total_violations) > 0:
