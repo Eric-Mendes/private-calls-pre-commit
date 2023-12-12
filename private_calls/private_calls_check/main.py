@@ -5,8 +5,8 @@ from ast import parse
 from contextlib import suppress
 from pathlib import Path
 
-from private_calls_check.find_call import FindCall
-from private_calls_check.find_function_def import FindFunctionDef
+from private_calls.private_calls_check.find_call import FindCall
+from private_calls.private_calls_check.find_function_def import FindFunctionDef
 
 
 def _create_violations_msg(mod_name: str, violations: list[str]) -> list[str]:
