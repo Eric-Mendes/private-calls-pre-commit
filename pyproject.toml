@@ -1,6 +1,6 @@
 [project]
 name = "private-calls-check"
-version = "0.1.4"
+version = "0.1.5"
 description = "pre-commit hook that checks whether a private function is being called outside of its module."
 readme = "README.md"
 requires-python = ">=3.10"
