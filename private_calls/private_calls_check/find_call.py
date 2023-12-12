@@ -1,4 +1,4 @@
-from ast import NodeVisitor
+from ast import Attribute, Name, NodeVisitor
 
 
 class FindCall(NodeVisitor):
@@ -6,5 +6,8 @@ class FindCall(NodeVisitor):
         self.result = []
 
     def visit_Call(self, node):
-        self.result.append(node.func.id)
+        if isinstance(node.func, Name):
+            self.result.append(node.func.id)
+        elif isinstance(node.func, Attribute):
+            self.result.append(node.func.attr)
         self.generic_visit(node)
