@@ -21,7 +21,9 @@ def _create_violations_msg(mod_name: str, violations: list[str]) -> list[str]:
 def private_calls_check(file: Path):
     file_path_no_name = ".".join(file.parts[:-1])
     file_stem = file.stem
-    mod_name = ".".join([file_path_no_name, file_stem])
+    mod_name = ".".join(
+        filter(lambda part: len(part) > 0, [file_path_no_name, file_stem])
+    )
 
     with suppress(OSError):  # in case module is empty.
         mod = importlib.import_module(mod_name)
