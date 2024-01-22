@@ -49,7 +49,7 @@ def private_calls_check(file: Path):
 def main(*filenames):
     parser = argparse.ArgumentParser()
     parser.add_argument("filenames", nargs="*")
-    args = parser.parse_args(*filenames)
+    args = parser.parse_args(filenames)
 
     total_violations = []
     for filename in args.filenames:
